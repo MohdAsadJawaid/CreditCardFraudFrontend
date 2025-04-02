@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Container, Card, Form, Row,Col } from "react-bootstrap";
+import { Container, Card, Form, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 
 function App() {
@@ -27,9 +27,12 @@ function App() {
     const numericFeatures = featureArray.map(Number);
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/predict", {
-        features: numericFeatures,
-      });
+      const response = await axios.post(
+        "https://creditcardfraudapi.onrender.com/predict",
+        {
+          features: numericFeatures,
+        }
+      );
       setResult(response.data.fraud);
       setFeatures("");
     } catch (error) {
