@@ -103,9 +103,9 @@ function App() {
                   >
                     Fraud Prediction:{" "}
                     <span
-                      className={result === 0 ? "text-danger" : "text-success"}
+                      className={result === 1 ? "text-danger" : "text-success"}
                     >
-                      {result === 0
+                      {result === 1
                         ? "🚨 Fraudulent Transaction"
                         : "✅ Legitimate Transaction"}
                     </span>
